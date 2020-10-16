@@ -34,7 +34,6 @@ $types = array(
 );
 
 if($types[$type] !== "valid"){
-  die()
+  die($climate->red("ERROR: Invalid argument " . $type . ". Valid arguments are report and check."));
 }
 
-$climate->red("ERROR: Invalid argument ");
