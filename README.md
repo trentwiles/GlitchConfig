@@ -1,1 +1,3 @@
-# LAMP Proof of Concept
+# CLI
+
+The Command Line tool for the Dangerous User Database.
