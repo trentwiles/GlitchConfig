@@ -1,20 +1,40 @@
 <?php
+#!/usr/bin/php
+
 
 require_once('vendor/autoload.php');
 
 $climate = new League\CLImate\CLImate;
 
-$climate->error('Ruh roh.');
-$climate->comment('Just so you know.');
-$climate->whisper('Not so important, just a heads up.');
-$climate->shout('This. This is important.');
-$climate->info('Nothing fancy here. Just some info.');
+$ve = phpversion();
+
+$v = substr($ve, 0, 3);
+
+if($v < 7.4){
+  $climate->comment('NOTICE: You are running PHP ' . $v . " We reccomend using PHP 7.3 or higher.");
+
+}
 
 $progress = $climate->progress()->total(100);
+
+$climate->bold('Please wait...');
 
 for ($i = 0; $i <= 100; $i++) {
   $progress->current($i);
 
   // Simulate something happening
-  usleep(800000);
+  usleep(8000);
 }
+
+$type = $argv[1];
+
+$types = array(
+  "report" => "valid",
+  "check" => "valid"
+);
+
+if($types[$type] !== "valid"){
+  die()
+}
+
+$climate->red("ERROR: Invalid argument ");
