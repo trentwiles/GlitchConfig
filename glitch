@@ -10,7 +10,7 @@ if(!isset($argv[1]))
   $no_args = true;
 }
 
-if("--version", $argv){
+if(in_array("--version", $argv)){
   die($climate->out('GlitchBundler v1.0'));
 }
 
