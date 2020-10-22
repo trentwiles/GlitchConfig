@@ -16,12 +16,11 @@ if(in_array("--version", $argv)){
 
 
 
-$images = json_decode(file_get_contents(".glitch-assets"));
+$images = json_decode(file_get_contents("/.glitch-assets"));
 
 $url = $images["url"];
-$file_name["name"];
 
-if(file_put_contents( $file_name,file_get_contents($url))) { 
+if(file_put_contents( "img.svg",file_get_contents($url))) { 
   // epic
 }
 
