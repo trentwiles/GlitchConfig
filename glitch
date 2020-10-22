@@ -14,13 +14,18 @@ if("--version", $argv){
   die($climate->out('GlitchBundler v1.0'));
 }
 
-if($no_args == true){
-  $details = "No project name specified...";
+
+
+$images = json_decode(file_get_contents(".glitch-assets"));
+
+$url = $images["url"];
+$file_name["name"];
+
+if(file_put_contents( $file_name,file_get_contents($url))) { 
+  // epic
 }
 
-$climate->out('Preparing to package details of this project.' . $details);
 
-shell_exec("touch .glitch");
 
 $progress = $climate->progress()->total(100);
 
