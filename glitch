@@ -5,4 +5,30 @@ require_once('vendor/autoload.php');
 
 $climate = new League\CLImate\CLImate;
 
-$climate->out($argv[1]);
+if(!isset($argv[1]))
+{
+  $no_args = true;
+}
+
+if("--version", $argv){
+  die($climate->out('GlitchBundler v1.0'));
+}
+
+if($no_args == true){
+  $details = "No project name specified...";
+}
+
+$climate->out('Preparing to package details of this project.' . $details);
+
+shell_exec("touch .glitch");
+
+$progress = $climate->progress()->total(100);
+
+for ($i = 0; $i <= 100; $i++) {
+  $progress->current($i);
+
+  // Simulate something happening
+  usleep(80000);
+}
+
+$climate->out("Done");
